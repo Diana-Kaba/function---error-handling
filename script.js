@@ -17,7 +17,7 @@ function printTable(from, to, step, func) {
       document.write("</tr>");
     }
     document.write("</table>");
-    if (isNaN(from, to, step)) {
+    if (isNaN(from || to || step)) {
       throw new Error("Not a Number");
     }
   } catch (ex) {
@@ -35,6 +35,6 @@ let f;
 // };
 
 let expr = prompt("Input function:");
-
 eval("f = function(x) {return " + expr + ";}");
+let foo = f();
 printTable(+prompt("Minimum?"), +prompt("Maximum?"), +prompt("Step"), f);
