@@ -17,7 +17,7 @@ function printTable(from, to, step, func) {
       document.write("</tr>");
     }
     document.write("</table>");
-    if (isNaN(from || to || step)) {
+    if (isNaN(from) || isNaN(to) || isNaN(step)) {
       throw new Error("Not a Number");
     }
   } catch (ex) {
